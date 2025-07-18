@@ -298,6 +298,9 @@
             setTimeout(() => status.remove(), 5000);
         }
 
+        // Backend API URL - update this after deploying to Render
+        const BACKEND_URL = 'https://your-render-app-name.onrender.com';
+        
         async function researchTopic() {
             const topic = document.getElementById('topic').value.trim();
             if (!topic) {
@@ -307,7 +310,7 @@
 
             showLoading();
             try {
-                const response = await fetch('/research', {
+                const response = await fetch(`${BACKEND_URL}/research`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -327,7 +330,7 @@
                 }
             } catch (error) {
                 hideLoading();
-                showStatus('Research feature requires backend deployment. This is a demo version.', 'info');
+                showStatus('Backend not deployed yet. Deploy to Render for full functionality.', 'info');
             }
         }
 
@@ -340,7 +343,7 @@
 
             showLoading();
             try {
-                const response = await fetch('/draft', {
+                const response = await fetch(`${BACKEND_URL}/draft`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -360,7 +363,7 @@
                 }
             } catch (error) {
                 hideLoading();
-                showStatus('Draft generation requires backend deployment. This is a demo version.', 'info');
+                showStatus('Backend not deployed yet. Deploy to Render for full functionality.', 'info');
             }
         }
 
@@ -373,7 +376,7 @@
 
             showLoading();
             try {
-                const response = await fetch('/post', {
+                const response = await fetch(`${BACKEND_URL}/post`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -389,11 +392,11 @@
                 } else {
                     document.getElementById('postContent').textContent = data.result;
                     document.getElementById('postResult').style.display = 'block';
-                    showStatus('Post feature requires backend deployment. This is a demo version.', 'info');
+                    showStatus('Post published successfully!', 'success');
                 }
             } catch (error) {
                 hideLoading();
-                showStatus('LinkedIn posting requires backend deployment. This is a demo version.', 'info');
+                showStatus('Backend not deployed yet. Deploy to Render for full functionality.', 'info');
             }
         }
 

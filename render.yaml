@@ -1,8 +1,10 @@
 services:
   - type: web
-    name: linkedin-post-agent
+    name: linkedin-post-agent-backend
     env: python
-    buildCommand: pip install -r requirements.txt && playwright install chromium
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
     startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
@@ -14,4 +16,6 @@ services:
       - key: LINKEDIN_PASSWORD
         sync: false
       - key: SECRET_KEY
-        generateValue: true 
+        generateValue: true
+      - key: PORT
+        value: 10000 
