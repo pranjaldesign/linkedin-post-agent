@@ -1,0 +1,11 @@
+# Environments
+.env
+.venv
+venv/
+__pycache__/
+
+# Credentials
+.linkedin_credentials.json
+
+# Browser data
+browser_data/ 

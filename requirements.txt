@@ -1,0 +1,13 @@
+click
+google-generativeai
+playwright
+python-dotenv
+beautifulsoup4
+requests
+lxml
+httpx
+Flask
+google-adk
+googlesearch-python
+gunicorn
+

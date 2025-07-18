@@ -1,0 +1,6 @@
+[project]
+name = "linkedin_poster"
+version = "0.1.0"
+
+[tool.adk.agents]
+linkedin_poster = "linkedin_poster.agent:root_agent" 
